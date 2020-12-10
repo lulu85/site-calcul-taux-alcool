@@ -1,0 +1,40 @@
+/* global */
+
+html{
+    font-family: 'Patrick Hand', cursive;
+}
+h1{
+    font-size: 40px  ;
+}
+p{
+    font-size: 30px;
+}
+
+table{
+    font-size: 25px;
+    background-color: grey;
+    border-radius: 20px;
+}
+
+th,td{
+text-align: center;
+
+height: 50px;
+}
+
+.flex1{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+}
+.flex2{
+    display: flex;
+    flex-flow: column wrap;
+    
+    
+}
+
+.inline-block{
+    display: inline-block;
+}
