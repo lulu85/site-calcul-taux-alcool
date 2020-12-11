@@ -115,65 +115,86 @@ function calculAlcool(){
             //Taux de conversion densité / alcool
 
             } else if( densite2 === ('0'||'1,000')){
-                document.getElementById('alcool1').innerHTML = '0';
+                document.getElementById('alcool1').innerHTML = '0 ';
             } else if( densite2 === '1,005'  ){
-                document.getElementById('alcool1').innerHTML = '0,7';
+                document.getElementById('alcool1').innerHTML = '0.7 ';
             } else if( densite2 === '1,010'  ){
-                document.getElementById('alcool1').innerHTML = '1,3';
+                document.getElementById('alcool1').innerHTML = '1.3 ';
             } else if( densite2 === '1,015'  ){
-                document.getElementById('alcool1').innerHTML = '1,9';
+                document.getElementById('alcool1').innerHTML = '1.9 ';
             } else if( densite2 === '1,020'  ){
-                document.getElementById('alcool1').innerHTML = '2,6';
+                document.getElementById('alcool1').innerHTML = '2.6 ';
             } else if( densite2 === '1,025'  ){
-                document.getElementById('alcool1').innerHTML = '3,2';
+                document.getElementById('alcool1').innerHTML = '3.2 ';
             } else if( densite2 === '1,030'  ){
-                document.getElementById('alcool1').innerHTML = '3,8';
+                document.getElementById('alcool1').innerHTML = '3.8 ';
             } else if( densite2 === '1,035'  ){
-                document.getElementById('alcool1').innerHTML = '4,4';
+                document.getElementById('alcool1').innerHTML = '4.4 ';
             } else if( densite2 === '1,040'  ){
-                document.getElementById('alcool1').innerHTML = '5';
+                document.getElementById('alcool1').innerHTML = '5 ';
             } else if( densite2 === '1,045'  ){
-                document.getElementById('alcool1').innerHTML = '5,6';
+                document.getElementById('alcool1').innerHTML = '5.6 ';
             } else if( densite2 === '1,050'  ){
-                document.getElementById('alcool1').innerHTML = '6,2';
+                document.getElementById('alcool1').innerHTML = '6.2 ';
             } else if( densite2 === '1,055'  ){
-                document.getElementById('alcool1').innerHTML = '6,8';
+                document.getElementById('alcool1').innerHTML = '6.8 ';
             } else if( densite2 === '1,060' ){
-                document.getElementById('alcool1').innerHTML = '7,3';
+                document.getElementById('alcool1').innerHTML = '7.3 ';
             } else if( densite2 === '1,065'  ){
-                document.getElementById('alcool1').innerHTML = '7,9';
+                document.getElementById('alcool1').innerHTML = '7.9 ';
             } else if( densite2 === '1,070'  ){
-                document.getElementById('alcool1').innerHTML = '8,5';
+                document.getElementById('alcool1').innerHTML = '8.5 ';
             } else if( densite2 === '1,075'  ){
-                document.getElementById('alcool1').innerHTML = '9,1';
-            } else if( densite2 === '1,080'  ){
-                document.getElementById('alcool1').innerHTML = '9,6';
+                document.getElementById('alcool1').innerHTML = '9.1 ';
+            } else if( densite2 == '1,080'  ){
+                document.getElementById('alcool1').innerHTML = '9.6 ';
             } else if( densite2 === '1,085'  ){
-                document.getElementById('alcool1').innerHTML = '10,4';
+                document.getElementById('alcool1').innerHTML = '10.4 ';
             } else if( densite2 === '1,090'  ){
-                document.getElementById('alcool1').innerHTML = '10,8';
+                document.getElementById('alcool1').innerHTML = '10.8 ';
             } else if( densite2 === '1,095'  ){
-                document.getElementById('alcool1').innerHTML = '11,3';
+                document.getElementById('alcool1').innerHTML = '11.3 ';
             } else if( densite2 === '1,100'  ){
-                document.getElementById('alcool1').innerHTML = '11,9';
+                document.getElementById('alcool1').innerHTML = '11.9 ';
             }
 
             // Calcul sucre avant embouteillage
 
             const f = sucre1 * 0.06;
-            document.querySelector('#sucre2').innerHTML = f;
-
+            document.querySelector('#sucre2').innerHTML = f.toFixed(1);
+            
 
             // Calcul taux d'alcool totale
 
+           
             
-            const g = document.getElementById('alcool1').value + document.getElementById('sucre2').value;
-            console.log(alcool1)
+            
+            var tauxBiere = document.getElementById('alcool1').innerHTML
+            var tauxBiereNumber = +tauxBiere
+            console.log(typeof tauxBiereNumber,tauxBiereNumber);
+            const g = tauxBiereNumber + f ;
+           
+            
 
-            document.querySelector('#alcool2').innerHTML = g;
+            document.querySelector('#alcool2').innerHTML = g.toFixed(1);
+
             console.log(typeof  alcool2);
-}
 
+
+            //bouton effacer 
+            effacer2.addEventListener('click', supprimerAll2)
+        }   
+        
+        
+function supprimerAll2() {
+    alcool1.innerHTML = '&emsp;';
+    alcool2.innerHTML = '&emsp;';
+    sucre2.innerHTML = '&emsp;';
+    densite2.value = '';
+    sucre1.value = '';
+
+
+}
 
 
 
